@@ -11,7 +11,6 @@ spring:
           uri: https://github.com/zjl2425228686/springcloud-demo.git #https，不是git
   profiles:
     active: dev
-# 通过 config-server 可以连接到git，访问其中的资源以及配置
 ---
 spring:
   profiles: dev
