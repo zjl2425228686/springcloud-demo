@@ -1,0 +1,18 @@
+server:
+  port: 9527
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: springcloud-zuul-9527 #修改Eureka上的默认描述信息
+spring:
+  application:
+    name: springcloud-zuul
+zuul:
+  routes:
+    dept.serviceId: springcloud-provider-dept
+    dept.path: /zjl/**
+#  ignored-services: "springcloud-provider-dept" #不能再使用这个路径访问
+  ignored-services: "*" #全部忽略
+#  prefix: /zjlzuul
